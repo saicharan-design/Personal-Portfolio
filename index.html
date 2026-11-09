@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page information and mobile-screen support -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of a first-year Computer Science Engineering student.">
+    <title>Sai Charan | Personal Portfolio</title>
+
+    <!-- Connect the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation bar: links jump to the matching page sections -->
+    <nav class="navbar">
+        <a class="logo" href="#home">SC<span>.</span></a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero section: profile image, introduction and main call-to-action -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <!-- Replace the embedded placeholder with src="photo.jpg" to use your own photo.
+                 Keep photo.jpg in the same folder as index.html and style.css. -->
+            <img
+                class="avatar"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230078d7'/%3E%3Cstop offset='1' stop-color='%235b2ea6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' rx='100' fill='url(%23g)'/%3E%3Ccircle cx='100' cy='76' r='37' fill='white'/%3E%3Cpath d='M28 190c4-48 31-73 72-73s68 25 72 73' fill='white'/%3E%3C/svg%3E"
+                alt="Illustrated profile placeholder"
+            >
+
+            <p class="eyebrow">HELLO, WORLD! I'M</p>
+            <h1>Sai Charan</h1>
+            <p class="tagline">First-Year Computer Science Engineering Student</p>
+            <p class="hero-intro">
+                Curious about technology, programming and building useful things.
+                I enjoy learning how ideas turn into working projects.
+            </p>
+            <a class="button" href="#projects">Explore My Projects <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="hero-decoration decoration-one" aria-hidden="true"></div>
+        <div class="hero-decoration decoration-two" aria-hidden="true"></div>
+    </header>
+
+    <main>
+        <!-- About section: a short personal introduction -->
+        <section class="section about-section" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">A LITTLE INTRODUCTION</p>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-card">
+                <p>
+                    I am a first-year Computer Science Engineering student at
+                    <strong>Symbiosis Institute of Technology, Pune</strong>.
+                    I am interested in programming, web development and exploring
+                    how technology can solve everyday problems. I am building my
+                    skills step by step through coursework, practice and personal projects.
+                </p>
+                <p>
+                    I also enjoy experimenting with Generative AI tools as coding
+                    assistants, while making sure I understand, test and improve
+                    the code they help create.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills section: each skill is displayed as a small pill -->
+        <section class="section" id="skills">
+            <div class="section-heading">
+                <p class="eyebrow">WHAT I'M LEARNING</p>
+                <h2>Skills &amp; Interests</h2>
+            </div>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>C++</li>
+                <li>HTML &amp; CSS</li>
+                <li>Git &amp; GitHub</li>
+                <li>Problem Solving</li>
+                <li>Generative AI</li>
+                <li>Prompt Writing</li>
+            </ul>
+        </section>
+
+        <!-- Projects section: three project cards requested in the assignment prompt -->
+        <section class="section projects-section" id="projects">
+            <div class="section-heading">
+                <p class="eyebrow">SOME THINGS I'VE BUILT</p>
+                <h2>My Projects</h2>
+                <p class="section-description">
+                    A few beginner-friendly projects that demonstrate programming
+                    fundamentals and practical problem-solving.
+                </p>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project card 1 -->
+                <article class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>Rule-Based Chatbot</h3>
+                    <p>
+                        A Python chatbot that responds to user questions by
+                        identifying keywords and matching message patterns
+                        with predefined replies.
+                    </p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>NLTK</span>
+                    </div>
+                </article>
+
+                <!-- Project card 2 -->
+                <article class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>Web Scraper</h3>
+                    <p>
+                        A web-scraping program that collects book titles and
+                        prices from a webpage using Requests and BeautifulSoup,
+                        then organises the results in a table.
+                    </p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Requests</span>
+                        <span>BeautifulSoup</span>
+                    </div>
+                </article>
+
+                <!-- Project card 3 -->
+                <article class="project-card">
+                    <div class="project-number">03</div>
+                    <h3>Student Record Manager</h3>
+                    <p>
+                        A menu-driven program that stores student marks using
+                        lists, tuples and dictionaries, and calculates each
+                        student's average.
+                    </p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Data Structures</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact section: replace the sample links with your real details -->
+        <section class="section contact-section" id="contact">
+            <div class="contact-card">
+                <p class="eyebrow">LET'S CONNECT</p>
+                <h2>Contact Me</h2>
+                <p>
+                    Have a project idea or want to connect? Feel free to reach out.
+                </p>
+                <!-- Replace the email address and GitHub URL before publishing -->
+                <a class="contact-link" href="mailto:avn.saicharan.btech2026@sitpune.edu.in">
+                    avn.saicharan.btech2026@sitpune.edu.in
+                </a>
+                <a class="contact-link" href="https://github.com/saicharan-design" target="_blank" rel="noopener noreferrer">
+                    GitHub profile ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: copyright and a short note about the technologies used -->
+    <footer class="footer">
+        <p>© 2026 Sai Charan. Built with HTML &amp; CSS.</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+</body>
+</html>
