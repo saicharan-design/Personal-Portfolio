@@ -1,0 +1,470 @@
+/* =========================================================
+   1. COLOUR PALETTE AND GLOBAL SETTINGS
+   CSS variables make it easy to change the website colours.
+   ========================================================= */
+:root {
+    --blue: #1677d2;
+    --blue-dark: #0756a4;
+    --purple: #7046c8;
+    --navy: #14213d;
+    --text: #344054;
+    --muted: #667085;
+    --background: #f6f8fc;
+    --white: #ffffff;
+    --border: #e6eaf2;
+    --shadow: 0 14px 40px rgba(28, 45, 82, 0.09);
+}
+
+/* Makes padding and borders part of an element's total width */
+* {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when a navigation link is clicked */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+/* Basic page typography, colours and spacing */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================================================
+   2. NAVIGATION BAR
+   Flexbox places the logo and menu on opposite sides.
+   ========================================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 14px max(6%, calc((100% - 1120px) / 2));
+    background: rgba(20, 33, 61, 0.97);
+    box-shadow: 0 4px 18px rgba(15, 25, 48, 0.12);
+}
+
+.logo {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #a98af5;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #eef3ff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: #bda8ff;
+}
+
+/* =========================================================
+   3. HERO / INTRODUCTION SECTION
+   The blue-purple gradient gives the first section emphasis.
+   ========================================================= */
+.hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 510px;
+    overflow: hidden;
+    padding: 68px 20px 76px;
+    color: var(--white);
+    text-align: center;
+    background: linear-gradient(130deg, var(--blue), var(--purple));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 720px);
+}
+
+.avatar {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 10px 28px rgba(22, 26, 60, 0.2);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: #a98af5;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero .eyebrow {
+    margin-top: 20px;
+    color: #e3d9ff;
+}
+
+.hero h1 {
+    margin: 0;
+    color: var(--white);
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+}
+
+.tagline {
+    margin: 12px 0 8px;
+    color: #f0eaff;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 600;
+}
+
+.hero-intro {
+    max-width: 570px;
+    margin: 12px auto 26px;
+    color: #f4f2ff;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 23px;
+    border: 2px solid var(--white);
+    border-radius: 30px;
+    color: var(--blue-dark);
+    background: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    color: var(--white);
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+.button span {
+    margin-left: 6px;
+}
+
+.hero-decoration {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+}
+
+.decoration-one {
+    top: -115px;
+    left: -70px;
+}
+
+.decoration-two {
+    right: -90px;
+    bottom: -145px;
+    width: 320px;
+    height: 320px;
+}
+
+/* =========================================================
+   4. GENERAL CONTENT SECTIONS
+   max-width keeps text readable on large displays.
+   ========================================================= */
+.section {
+    width: min(100% - 40px, 1040px);
+    margin: 0 auto;
+    padding: 76px 0 20px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.contact-card h2 {
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 7px;
+    border-bottom: 3px solid var(--blue);
+    color: var(--navy);
+    font-size: clamp(27px, 4vw, 34px);
+    letter-spacing: -0.7px;
+}
+
+.section-description {
+    max-width: 620px;
+    margin: 13px 0 0;
+    color: var(--muted);
+}
+
+/* About section content is placed in a simple white card */
+.about-card {
+    padding: 25px 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.about-card p {
+    margin: 0 0 12px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.about-card strong {
+    color: var(--blue-dark);
+}
+
+/* =========================================================
+   5. SKILLS
+   Flexbox allows the skill pills to wrap onto new lines.
+   ========================================================= */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skills-list li {
+    padding: 8px 17px;
+    border: 1px solid #cbdcf7;
+    border-radius: 25px;
+    color: var(--blue-dark);
+    background: #edf5ff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   6. PROJECT CARDS
+   CSS Grid automatically adjusts the number of columns.
+   ========================================================= */
+.projects-section {
+    padding-top: 76px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    min-height: 245px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(28, 45, 82, 0.14);
+}
+
+.project-number {
+    margin-bottom: 13px;
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 20px;
+}
+
+.project-card p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tags span {
+    padding: 4px 10px;
+    border-radius: 15px;
+    color: #5d3da7;
+    background: #f0eaff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   7. CONTACT SECTION
+   ========================================================= */
+.contact-section {
+    padding-bottom: 76px;
+}
+
+.contact-card {
+    padding: 34px;
+    border-radius: 18px;
+    color: var(--white);
+    background: linear-gradient(125deg, #172b50, #39266f);
+    box-shadow: var(--shadow);
+}
+
+.contact-card h2 {
+    color: var(--white);
+    border-bottom-color: #a98af5;
+}
+
+.contact-card > p:not(.eyebrow) {
+    max-width: 600px;
+    color: #e0e6f5;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 8px 18px 0 0;
+    color: #c9baff;
+    font-weight: 700;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* =========================================================
+   8. FOOTER
+   ========================================================= */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px max(6%, calc((100% - 1120px) / 2));
+    color: #e9eef9;
+    background: var(--navy);
+    font-size: 13px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #c9baff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--white);
+}
+
+/* =========================================================
+   9. RESPONSIVE DESIGN FOR PHONES AND SMALL SCREENS
+   These rules apply when the screen is 600px wide or less.
+   ========================================================= */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 52px 18px 60px;
+    }
+
+    .avatar {
+        width: 116px;
+        height: 116px;
+    }
+
+    .section {
+        width: min(100% - 32px, 1040px);
+        padding-top: 55px;
+    }
+
+    .about-card,
+    .project-card {
+        padding: 21px;
+    }
+
+    .contact-card {
+        padding: 25px 21px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
